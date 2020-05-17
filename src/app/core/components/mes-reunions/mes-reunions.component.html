@@ -1,0 +1,43 @@
+<div class="col-lg-12">
+  <div class="">
+    <div class="card mb-4">
+      <div class="card-header py-3">
+        <h5 class="m-0 font-weight-bold doodle-color" style="text-align: center; width: 100%;">
+          Mes réunions
+        </h5>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col" width="30%">Intitulé</th>
+            <th scope="col" width="50%"style="text-align: center;">Résumé</th>
+            <th scope="col" style="text-align: center;"> Date choisie</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let sondage of listMesSondage">
+          <tr>
+            <td>{{ sondage['intitule'] }}</td>
+            <td>{{ sondage['resume'] }}</td>
+            <td style="text-align: center;">
+
+                <label *ngIf="sondage['dateChoisie'] != 0;else other_datecontent">
+                  {{sondage['dateChoisie']| date: 'yyyy-MM-dd'}}
+                </label>
+
+                <ng-template #other_datecontent>
+                  <label>
+                    N/A ( Sondage en cours)
+                  </label>
+                </ng-template>
+
+              
+            </td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

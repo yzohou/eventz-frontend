@@ -1,0 +1,103 @@
+<div class="container">
+
+  <div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-0">
+      <!--<p-messages [(value)]="msgs"></p-messages>
+       Nested Row within Card Body -->
+      <div class="row" style="padding: 5px">
+        <div class="col-lg-6">
+          <div class="">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Détail sondage</h6>
+              </div>
+              <div class="card-body">
+                <div style="color: #1c294e; font-weight: 600;">
+                  Intitulé:
+                </div>
+                <div class="">
+                  {{sondageDetail['intitule']}}
+                </div>
+                <br>
+                <div style="color: #1c294e;  font-weight: 600;">
+                  Résumé: 
+                </div>
+                <div class="">
+                  {{sondageDetail['resume']}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Dates proposées</h6>
+            </div>
+            
+            <div class="card-body">
+
+              <label *ngIf="token == 1 ;else other_content">
+                 Vous avez déjà participé à ce sondage.
+              </label>
+              <ng-template #other_content>
+                <table  style="width: 100%">
+                  <tbody >
+                    <tr *ngFor="let list of sondageDetail['datesPossibles']" >
+                      
+                      <td style="width: 40%">
+                        {{list['dateValue']| date: 'yyyy-MM-dd'}}
+                      </td>
+                      
+                      <td width="40%">
+                        
+                        <label *ngIf="list['hasDejeuner'];else other_content">
+                          Déjeuner
+                        </label>
+    
+                        <ng-template #other_content>
+                          <label>
+                            Pas déjeuner
+                          </label>
+                        </ng-template>
+                        
+                      </td>
+    
+                      <td width="20%">
+    
+                        <a class="btn-xs event-element mr-2" style="border-radius: 5px" routerLink="/valider-proposition/{{ list['id'] }}/{{ sondageDetail['id'] }}  ">
+                          <i class="fa fa-check"></i>
+                        </a>
+    
+                      </td>
+    
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </ng-template>
+              
+              <div>
+                <label class="doodle-color" style="font-weight: 600; margin-top: 1%; margin-right: 1%;">Date choisie: </label>
+                <label *ngIf="sondageDetail['dateChoisie'] != 0;else other_datecontent">
+                  {{sondageDetail['dateChoisie']| date: 'yyyy-MM-dd'}}
+                </label>
+
+                <ng-template #other_datecontent>
+                  <label>
+                    N/A ( Sondage en cours)
+                  </label>
+                </ng-template>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

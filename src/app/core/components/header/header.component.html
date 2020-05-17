@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+  <!-- Topbar Navbar -->
+  <ul class="navbar-nav ml-auto">
+
+    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+
+
+    <!-- Nav Item - Alerts -->
+
+
+    <!-- Nav Item - Messages -->
+
+      <li class="nav-item dropdown no-arrow mx-1" *ngIf="!isUserLoggedIn">
+        <a href="/login" class="event-element btn btn-primary">
+                        <span class="icon text-white-50">
+                        </span>
+          <span class="text ml-1">Connexion</span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown no-arrow mx-1" *ngIf="!isUserLoggedIn">
+        <a href="/register" class="event-element btn btn-primary">
+                      <span class="icon text-white-50">
+                      </span>
+          <span class="text ml-1">Inscription</span>
+        </a>
+      </li>
+
+
+    <li class="nav-item dropdown no-arrow mx-1" *ngIf="isUserLoggedIn">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center">
+        <div class="sidebar-brand-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">{{username}}</div>
+      </a>
+    </li>
+
+    <li class="nav-item dropdown no-arrow mx-1" *ngIf="isUserLoggedIn">
+      <a href="/logout" class="event-element btn btn-primary">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-lock"></i>
+                    </span>
+        <span class="text ml-1">Déconnexion</span>
+      </a>
+    </li>
+  </ul>
+</nav>

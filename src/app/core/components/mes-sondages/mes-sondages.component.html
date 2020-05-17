@@ -1,0 +1,46 @@
+<div class="col-lg-12">
+  <div class="">
+    <div class="card mb-4">
+      <div class="card-header py-3">
+        <h5 class="m-0 font-weight-bold doodle-color" style="text-align: center; width: 100%;">
+          Mes Sondages
+        </h5>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col" width="30%">Intitulé</th>
+            <th scope="col" width="50%"style="text-align: center;">Résumé</th>
+            <th scope="col" style="text-align: center;"> Détail</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let sondage of listMesSondage">
+          <tr>
+            <td>{{ sondage['intitule'] }}</td>
+            <td>{{ sondage['resume'] }}</td>
+            <td style="text-align: center;">
+
+              <label *ngIf="sondage['dateChoisie'] == 0;else other_content">
+                  <a class="btn event-element mr-1" routerLink="/sondage-detail/{{ sondage['id'] }}/1">
+                    <i class="fa fa-list " style="color: white"></i>
+                  </a>
+              </label>
+
+              <ng-template #other_content>
+                <label class="doodle-color" style="font-weight: 600; margin-top: 1%; margin-right: 1%;">Date choisie: </label>
+                <label>
+                  {{sondage['dateChoisie']| date: 'yyyy-MM-dd'}}
+                </label>
+              </ng-template>
+
+              
+            </td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

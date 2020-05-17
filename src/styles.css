@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* .container {
+    width: 40%;
+    height: 40%;
+    background: #444;
+    margin: 0 auto;
+} */
+
+.container img {
+    width: 100%;
+ }
+
+ .event-element{
+     background-color: #fcb103;
+ }
+
+ button.event-element, a.event-element{
+    border-color: #fcb103;
+    color: #ffffff;
+}
+
+button:hover, a:hover{
+    background-color: #000000 !important;
+}
+
+#accordionSidebar{
+    height: 100%;
+}
+
+.doodle-color{
+    color: #fcb103;
+}
+
+.doodle-background-color{
+    color: #fcb103;
+}

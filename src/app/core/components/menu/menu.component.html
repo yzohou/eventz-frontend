@@ -1,0 +1,56 @@
+<!-- Sidebar -->
+<ul  class="event-element navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fa fa-meetup"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">EVENTZ</div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <div *ngIf="isUserLoggedIn" >
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item"  routerLinkActive="active">
+    <a class="nav-link" routerLink="/add-reunion">
+      <i class="fas fa-plus"></i>
+      <span>Créer une réunion</span></a>
+  </li>
+
+  <li class="nav-item"  routerLinkActive="active">
+    <a class="nav-link" routerLink="/mes-reunions">
+      <i class="fas fa-calendar"></i>
+      <span>Mes réunions</span></a>
+  </li>
+
+  
+
+
+  <!-- 
+    <hr class="sidebar-divider">
+    <li class="nav-item"  routerLinkActive="active">
+      <a class="nav-link" routerLink="/participer-liste">
+      <i class="fas fa-check"></i>
+      <span>Participer à un sondage</span></a>
+    </li> 
+  -->
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+    <li class="nav-item"  routerLinkActive="active">
+      <a class="nav-link" routerLink="/mes-sondages">
+      <i class="fas fa-list"></i>
+      <span>Mes Sondages</span></a>
+  </li>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider">
+
+  </div>
+
+</ul>
+<!-- End of Sidebar -->

@@ -1,0 +1,32 @@
+<div class="col-lg-12">
+  <div class="">
+    <div class="card mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold doodle-color">Mes réunions</h6>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col" width="30%">Intitulé</th>
+            <th scope="col" width="50%">Résumé</th>
+            <th scope="col"> Actions</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let listMesSondag of listMesSondage">
+          <tr>
+            <td>{{ listMesSondag['intitule'] }}</td>
+            <td>{{ listMesSondag['resume'] }}</td>
+            <td>
+              <a class="btn btn-primary mr-1" routerLink="/mesdoodle-detail/{{ listMesSondag['id'] }}">
+                <i class="fa fa-list" style="color: white"></i>
+              </a>
+            </td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
